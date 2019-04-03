@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.fajar.aksio1">
+
+    <!-- Creates a custom permission so only this app can receive its messages. -->
+    <permission
+        android:name="com.example.fajar.aksio1.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.example.fajar.aksio1.permission.C2D_MESSAGE" />
+
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <application
+        android:name=".AppController"
+        android:allowBackup="true"
+        android:icon="@mipmap/icon"
+        android:label="aksio"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:name=".login_form"
+            android:label="aksio"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".hal_murid">
+        </activity>
+        <activity
+            android:name=".profile_murid">
+        </activity>
+        <activity
+            android:name=".mapel">
+        </activity>
+        <Fragment
+            android:name=".senin">
+        </Fragment>
+        <Fragemnt
+            android:name=".selasa">
+        </Fragemnt>
+        <Fragment
+            android:name=".rabu">
+        </Fragment>
+        <Fragment
+            android:name=".kamis">
+        </Fragment>
+        <Fragment
+            android:name=".jumat">
+        </Fragment>
+
+        <Fragment
+            android:name=".senin_guru">
+        </Fragment>
+        <Fragemnt
+            android:name=".selasa_guru">
+        </Fragemnt>
+        <Fragment
+            android:name=".rabu_guru">
+        </Fragment>
+        <Fragment
+            android:name=".kamis_guru">
+        </Fragment>
+        <Fragment
+            android:name=".jumat_guru">
+        </Fragment>
+
+        <activity
+            android:name=".grafik">
+        </activity>
+        <activity
+            android:name=".kontak_guru">
+            <uses-permission android:name="android.permission.CALL_PHONE" />
+            <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+        </activity>
+        <activity
+            android:name=".hal_guru">
+        </activity>
+        <activity
+            android:name=".input_nilai">
+        </activity>
+        <activity
+            android:name=".remainder">
+        </activity>
+        <activity
+            android:name=".profile_guru">
+        </activity>
+        <activity
+            android:name=".mapel_guru">
+        </activity>
+        <activity
+            android:name=".nilai_mtk">
+        </activity>
+        <activity
+            android:name=".nilai_idn">
+        </activity>
+        <activity
+            android:name=".nilai_bign">
+        </activity>
+        <activity
+            android:name=".nilai_ipa">
+        </activity>
+        <activity
+            android:name=".nilai_ips">
+        </activity>
+        <activity
+            android:name=".nilai_agama">
+        </activity>
+
+        <!--tes class -->
+        <activity
+            android:name=".main">
+        </activity>
+        <activity
+            android:name=".regis">
+        </activity>
+
+        <receiver
+            android:name="com.google.android.gcm.GCMBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+
+                <!-- Receives the actual messages. -->
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+
+                <!-- Receives the registration id. -->
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+
+                <category android:name="com.example.fajar.aksio1" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".GCMIntentService" />
+    </application>
+
+</manifest>
